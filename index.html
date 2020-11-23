@@ -533,6 +533,7 @@
 								var $leftNav = $('#js_climit_li');
 								$leftNav.html(rootCatHtml);
 
+								//事件
 								$("li").hover(function () {
 									// debugger;
 									$(".category-content .category-list li.first .menu-in").css("display",
@@ -548,7 +549,7 @@
 									var subCatHtml = subWapper.html();
 									var rootCatId = subWapper.attr("rootCatId");
 									// console.log(rootCatId);
-									// 如果该节点下没有内容，则发起请求查询子分类并且渲染到页面，如果有的话就不查询了（懒加载模式）
+									// 如果该节点（一级大分类）下没有内容，则发起请求查询子分类（二级分类及其子类）并且渲染到页面，如果有的话就不查询了（懒加载模式）
 									if (subCatHtml == null || subCatHtml == '' || subCatHtml == undefined) {
 										if (rootCatId != undefined && rootCatId != null && rootCatId != '') {
 											// 根据root分类id查询该分类下的所有子分类
