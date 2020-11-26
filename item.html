@@ -251,20 +251,20 @@
 
 						<div class="actor-new comment-summary">
 							<div class="rate">
-								<div v-if="countsVO.totalCounts == 0">
+								<div v-if="countsVO.totalCount == 0">
 									<strong>100<span>%</span></strong>
 								</div>
-								<div v-if="countsVO.totalCounts > 0">
-									<strong>{{Math.round(countsVO.goodCounts / countsVO.totalCounts * 100)}}<span>%</span></strong>
+								<div v-if="countsVO.totalCount > 0">
+									<strong>{{Math.round(countsVO.goodCount / countsVO.totalCount * 100)}}<span>%</span></strong>
 								</div>
 								<br /><span>好评度</span>
 							</div>
 							<div class="comment-counts">
 
-								<div class="counts-words" @click="renderCommentsByLevel('')">全部评价（{{countsVO.totalCounts}}）</div>
-								<div class="counts-words" @click="renderCommentsByLevel(1)" style="margin-left: 20px;">好评（{{countsVO.goodCounts}}）</div>
-								<div class="counts-words" @click="renderCommentsByLevel(2)" style="margin-left: 20px;">中评（{{countsVO.normalCounts}}）</div>
-								<div class="counts-words" @click="renderCommentsByLevel(3)" style="margin-left: 20px;">差评（{{countsVO.badCounts}}）</div>
+								<div class="counts-words" @click="renderCommentsByLevel('')">全部评价（{{countsVO.totalCount}}）</div>
+								<div class="counts-words" @click="renderCommentsByLevel(1)" style="margin-left: 20px;">好评（{{countsVO.goodCount}}）</div>
+								<div class="counts-words" @click="renderCommentsByLevel(2)" style="margin-left: 20px;">中评（{{countsVO.normalCount}}）</div>
+								<div class="counts-words" @click="renderCommentsByLevel(3)" style="margin-left: 20px;">差评（{{countsVO.badCount}}）</div>
 
 							</div>
 						</div>
@@ -518,6 +518,7 @@
 								this.commentList = commentList;
 								// console.log(commentList);
 
+								// 格式化时间
 								for (var i = 0 ; i < commentList.length ; i ++) {
 									var date = commentList[i].createdTime;
 									var formatedTime = moment(date).format('YYYY年MM月DD日 h:mm:ss');
