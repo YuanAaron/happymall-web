@@ -80,7 +80,7 @@ window.app = {
         var foodieShopcart = [];
         if (foodieShopcartCookie != null && foodieShopcartCookie != "" && foodieShopcartCookie != undefined) {
             var foodieShopcartStr = decodeURIComponent(foodieShopcartCookie);
-            foodieShopcart = JSON.parse(foodieShopcartStr);
+            foodieShopcart = JSON.parse(foodieShopcartStr); //转换成一个List
 
             // 如果不是对象，则重新复制为空数组
             if (typeof(foodieShopcart) != "object") {
@@ -106,7 +106,7 @@ window.app = {
         } else {
             foodieShopcart.push(pendingItem);
         }
-
+        // 用新的购物车cookie覆盖本地已经有的购物车cookie
         this.setCookie("shopcart", JSON.stringify(foodieShopcart));
     },
 

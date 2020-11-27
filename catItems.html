@@ -239,7 +239,7 @@
 				var searchType = app.getUrlParam("searchType");
 				if (searchType == null || searchType == undefined || searchType == '') {
 					return false;
-				} else if (searchType == "searchItems") {
+				} else if (searchType == "searchItems") { //根据关键字进行搜索
 					this.searchType = searchType;
 
 					var keywords = app.getUrlParam("keywords");
@@ -249,7 +249,7 @@
 					this.keywords = keywords;
 
 					this.searchInBackend(keywords, "k", 1, 20);
-				} else if (searchType == "catItems") {
+				} else if (searchType == "catItems") {  //根据三级小分类id（首页）进行搜索
 					this.searchType = searchType;
 					// 从别的页面来的搜索
 					var catId = app.getUrlParam("catId");
