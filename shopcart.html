@@ -296,6 +296,7 @@
 							return;
 						}
 						
+						// 如果用户是未登录状态
 						// 删除cookie中的商品
 						var shopcartList = app.getShopcartList();
 						for (var i = 0 ; i < shopcartList.length ; i ++) {
@@ -420,7 +421,7 @@
 											// 删除现有购物车cookie
 											app.deleteCookie("shopcart");
 											// console.log(newItemList);
-											// 拿到最新商品数据以后，重新组合成购物车数据
+											// 拿到最新商品数据以后，重新组合成购物车数据(加入新的购买数量)
 											for (var i = 0 ; i < newItemList.length ; i ++) {
 												var tmpNewItem = newItemList[i];
 												var tmpNewItemSpecId = tmpNewItem.specId;

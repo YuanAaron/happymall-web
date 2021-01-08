@@ -563,8 +563,14 @@
 										this.orderId = orderId;
 
 										// 支付宝支付直接跳转
-										window.location.href = "alipay.html?orderId=" + orderId + "&amount="+this.totalAmount;
-										window.open("alipayTempTransit.html?orderId=" + orderId);
+										window.location.href = "alipay.html?orderId=" + orderId + "&amount="+this.totalAmount;//
+										//window.open("alipayTempTransit.html?orderId=" + orderId); //会被浏览器拦截,所以采用下面的方式实现
+										const url = "alipayTempTransit.html?orderId=" + orderId;
+										const link = document.createElement("a");
+										link.setAttribute("href",url);
+										link.setAttribute("target","_blank");
+										link.click();
+
 										// const newWindow = window.open();
 										// 弹出的新窗口进行支付
 										// newWindow.location = "alipayTempTransit.html?orderId=" + orderId;
@@ -661,7 +667,7 @@
 					var serverUrl = app.serverUrl;
 					axios.defaults.withCredentials = true;
 					axios.post(
-							serverUrl + '/address/setDefalut?userId=' + userInfo.id + "&addressId=" + addressId, 
+							serverUrl + '/address/setDefault?userId=' + userInfo.id + "&addressId=" + addressId, 
 							{},
 							{
 								headers: {
