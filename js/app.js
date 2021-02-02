@@ -1,17 +1,18 @@
 window.app = {
     /* 开发环境 */
-    serverUrl: "http://127.0.0.1:8088",                                   // 接口服务接口地址，注意：访问链接必须要和这里一样，否则因为跨域可能拿不到Cookie
+    //serverUrl: "http://127.0.0.1:8088",                                   // 接口服务接口地址，注意：访问链接必须要和这里一样，否则因为跨域可能拿不到Cookie
     // paymentServerUrl: "http://192.168.1.3:8089",                            // 支付中心服务地址
-    shopServerUrl: "http://127.0.0.1:8080/happymall-web/",                  // 门户网站地址
-    centerServerUrl: "http://127.0.0.1:8080/happymall-center/",              // 用户中心地址
+    //shopServerUrl: "http://127.0.0.1:8080/happymall-web/",                  // 门户网站地址
+    //centerServerUrl: "http://127.0.0.1:8080/happymall-center/",              // 用户中心地址
     cookieDomain: "",                                                       // cookie 域
 
     /* 生产环境 */
-    // serverUrl: "http://api.z.mukewang.com:8088/foodie-dev-api",                      // 接口服务接口地址
+    serverUrl: "http://47.93.190.199:8088/happymall",                      // 接口服务接口地址
     paymentServerUrl: "http://payment.t.mukewang.com/foodie-payment",       // 支付中心服务地址
-    // shopServerUrl: "http://shop.z.mukewang.com:8080/foodie-shop/",                            // 门户网站地址
-    // centerServerUrl: "http://center.z.mukewang.com:8080/foodie-center/",                        // 用户中心地址
-    // cookieDomain: ".z.mukewang.com;",                                       // cookie 域
+    shopServerUrl: "http://47.93.190.199:8080/happymall-web/",                            // 门户网站地址
+    centerServerUrl: "http://47.93.190.199:8080/happymall-center/",                        // 用户中心地址
+    //cookieDomain: ".z.mukewang.com;",                                       // cookie 域
+    cookieDomain: "",
 
     ctx: "/happymall-web",
 
