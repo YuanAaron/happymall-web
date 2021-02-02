@@ -16,6 +16,14 @@ window.app = {
 
     ctx: "/happymall-web",
 
+    /*
+    查看后端tomcat/logs/catalina.out日志可知，cookie域使用域名注册会出现cookie异常，
+    解决方法是修改该tomcat配置，以使用老版的cookieProcessor
+    具体操作是进入后端tomcat/conf/context.xml，然后再<Context>标签中添加下面一行：
+
+    <CookieProcessor className="org.apache.tomcat.util.http.LegacyCookieProcessor"/>
+    */
+
     getCookie: function (cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
